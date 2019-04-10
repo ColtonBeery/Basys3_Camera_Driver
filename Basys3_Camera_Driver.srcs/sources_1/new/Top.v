@@ -58,21 +58,23 @@ vga640x480 display (
     localparam VRAM_D_WIDTH = 6;   // colour bits per pixel
 
     reg [VRAM_A_WIDTH-1:0] address;
+    reg [VRAM_D_WIDTH-1:0] datain;
     wire [VRAM_D_WIDTH-1:0] dataout;
+    reg we = 0;  // write enable bit
 
+    // frame buffer A VRAM
     sram #(
         .ADDR_WIDTH(VRAM_A_WIDTH), 
         .DATA_WIDTH(VRAM_D_WIDTH), 
         .DEPTH(VRAM_DEPTH), 
-        .MEMFILE("game.mem"))  // bitmap to load
+        .MEMFILE("")) 
         vram (
         .i_addr(address), 
         .i_clk(CLK), 
-        .i_write(0),  // we're always reading
-        .i_data(0), 
+        .i_write(we),
+        .i_data(datain), 
         .o_data(dataout)
     );
- 
  //Instantiate Camera In module
  reg [7:0] Cam_Data;
  Cam_In camera (

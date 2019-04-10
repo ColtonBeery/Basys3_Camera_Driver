@@ -1,0 +1,8 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Hide cache and other Vivado files from Github Linguist
+* linguist-vendored
+*.v linguist-vendored=false
+*.xdc linguist-vendored=false
+*.bit linguist-vendored=false

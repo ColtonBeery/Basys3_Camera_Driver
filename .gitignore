@@ -1,0 +1,13 @@
+#########
+#Exclude all but these
+#########
+*
+!*/
+!.gitignore
+!.gitattributes
+!*.v
+!*.bit
+!*.xpr
+!*.xdc
+!*.md
+!*.jpg

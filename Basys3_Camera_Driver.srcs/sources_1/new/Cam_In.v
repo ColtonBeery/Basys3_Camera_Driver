@@ -18,6 +18,7 @@
 
 
 module Cam_In(
+    input clk,
     input [7:0] JA, //Input from Pi Camera on JA port
     output [7:0] Cam_Data //passes data from camera back to top module to be saved in RAM
     );
